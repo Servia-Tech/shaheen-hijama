@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0e4d3c"/><stop offset="1" stop-color="#0b3b2e"/>
+    </linearGradient>
+    <pattern id="stars" width="120" height="120" patternUnits="userSpaceOnUse">
+      <path d="M60 20l8 20 20-5-12 17 12 17-20-5-8 20-8-20-20 5 12-17-12-17 20 5z" fill="#c08a2d" opacity="0.10"/>
+    </pattern>
+  </defs>
+  <rect width="1200" height="630" fill="url(#bg)"/>
+  <rect width="1200" height="630" fill="url(#stars)"/>
+  <circle cx="985" cy="315" r="150" fill="#f3f1e9" opacity="0.10"/>
+  <path d="M985 200l14 34 37 5-27 26 6 37-30-17-30 17 6-37-27-26 37-5z" fill="#c08a2d"/>
+  <text x="90" y="250" font-family="Georgia, serif" font-size="70" font-weight="700" fill="#f3f1e9">Shaheen Shafi</text>
+  <text x="90" y="330" font-family="Georgia, serif" font-size="44" fill="#c08a2d">Unani Clinic &amp; Hijama Center</text>
+  <text x="90" y="410" font-family="Arial, sans-serif" font-size="30" fill="#dce9e2">Sunnah Hijama &amp; classical Unani care</text>
+  <text x="90" y="455" font-family="Arial, sans-serif" font-size="30" fill="#dce9e2">Nishterabad, Karachi</text>
+  <rect x="90" y="505" width="360" height="64" rx="32" fill="#25d366"/>
+  <text x="270" y="546" font-family="Arial, sans-serif" font-size="26" font-weight="700" fill="#06301c" text-anchor="middle">Book on WhatsApp</text>
+</svg>
