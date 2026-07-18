@@ -43,6 +43,131 @@ function applyContactLinks() {
   });
 }
 
+/* =========================================================================
+   Sunnah days for Hijama — Islamic (Hijri) date feature
+   Uses the browser-native Umm al-Qura Islamic calendar (Intl). No library.
+   Sunnah: cupping (Hijama) is reported as especially good on the 17th, 19th
+   and 21st of the lunar month (Sunan Abu Dawud 3861, Sunan Ibn Majah 3486),
+   and particularly on Monday or Thursday.
+   ========================================================================= */
+
+/* Urdu names for the 12 Hijri months (Umm al-Qura month index 1..12). */
+const HIJRI_MONTHS_UR = [
+  "محرم", "صفر", "ربیع الاول", "ربیع الثانی", "جمادی الاول", "جمادی الثانی",
+  "رجب", "شعبان", "رمضان", "شوال", "ذوالقعدہ", "ذوالحجہ"
+];
+/* Clean English Hijri month names (avoids the transliteration marks Intl adds). */
+const HIJRI_MONTHS_EN = [
+  "Muharram", "Safar", "Rabiʿ al-Awwal", "Rabiʿ al-Thani", "Jumada al-Ula", "Jumada al-Akhira",
+  "Rajab", "Shaʿban", "Ramadan", "Shawwal", "Dhu al-Qaʿda", "Dhu al-Hijja"
+];
+const SUNNAH_DAYS = [17, 19, 21];
+
+const _hijriFmt = new Intl.DateTimeFormat("en-u-ca-islamic-umalqura", {
+  day: "numeric", month: "numeric", year: "numeric"
+});
+
+/* Return {day, month, year} in the Umm al-Qura calendar for a JS Date. */
+function hijriParts(date) {
+  const out = {};
+  _hijriFmt.formatToParts(date).forEach(function (p) {
+    if (p.type !== "literal") out[p.type] = parseInt(p.value, 10);
+  });
+  return out;
+}
+
+/* Build a display string "17 Safar 1448 AH" (en) / "17 صفر 1448 ہجری" (ur). */
+function hijriString(hp, lang) {
+  const mi = hp.month - 1;
+  if (lang === "ur") {
+    return hp.day + " " + (HIJRI_MONTHS_UR[mi] || "") + " " + hp.year + " ہجری";
+  }
+  return hp.day + " " + (HIJRI_MONTHS_EN[mi] || "") + " " + hp.year + " AH";
+}
+
+function gregString(date, lang) {
+  try {
+    return new Intl.DateTimeFormat(lang === "ur" ? "ur-PK" : "en-GB", {
+      weekday: "long", day: "numeric", month: "long", year: "numeric"
+    }).format(date);
+  } catch (e) {
+    return date.toDateString();
+  }
+}
+
+/* Is this weekday a specially-recommended one (Monday=1 or Thursday=4)? */
+function isBlessedWeekday(date) {
+  const d = date.getDay();
+  return d === 1 || d === 4;
+}
+function weekdayName(date, lang) {
+  try {
+    return new Intl.DateTimeFormat(lang === "ur" ? "ur-PK" : "en-US", { weekday: "long" }).format(date);
+  } catch (e) { return ""; }
+}
+
+/* Compute today's Hijri date + the next few upcoming 17/19/21 Sunnah days. */
+function computeSunnahData() {
+  const now = new Date();
+  const today = new Date(now.getFullYear(), now.getMonth(), now.getDate());
+  const todayHp = hijriParts(today);
+  const todayIsSunnah = SUNNAH_DAYS.indexOf(todayHp.day) >= 0;
+
+  const upcoming = [];
+  const cur = new Date(today.getTime());
+  // iterate forward day-by-day until we collect 6 Sunnah dates (guard ~420 days)
+  for (let i = 0; i < 420 && upcoming.length < 6; i++) {
+    const hp = hijriParts(cur);
+    if (SUNNAH_DAYS.indexOf(hp.day) >= 0) {
+      upcoming.push({
+        date: new Date(cur.getTime()),
+        hp: hp,
+        isToday: (i === 0)
+      });
+    }
+    cur.setDate(cur.getDate() + 1);
+  }
+  return { today: today, todayHp: todayHp, todayIsSunnah: todayIsSunnah, upcoming: upcoming };
+}
+
+let _sunnahData = null;
+
+/* Render (or re-render on language change) the Sunnah-days UI. */
+function renderSunnah() {
+  const daysEl = document.getElementById("sunnahDays");
+  const hijriEl = document.getElementById("hijriToday");
+  const gregEl = document.getElementById("gregToday");
+  if (!daysEl || !hijriEl || !gregEl) return;
+
+  if (!_sunnahData) {
+    try { _sunnahData = computeSunnahData(); }
+    catch (e) { return; } // Intl islamic calendar unsupported — leave the "…" placeholders / noscript note
+  }
+  const lang = currentLang;
+  const d = _sunnahData;
+
+  hijriEl.textContent = hijriString(d.todayHp, lang);
+  gregEl.textContent = gregString(d.today, lang);
+
+  const flag = document.getElementById("sunnahTodayFlag");
+  if (flag) { if (d.todayIsSunnah) flag.removeAttribute("hidden"); else flag.setAttribute("hidden", ""); }
+
+  const todayLabel = lang === "ur" ? "آج" : "Today";
+  const blessedLabel = lang === "ur" ? "پیر/جمعرات — بابرکت" : "Mon/Thu — blessed";
+
+  daysEl.innerHTML = d.upcoming.map(function (u) {
+    const blessed = isBlessedWeekday(u.date);
+    const dow = weekdayName(u.date, lang);
+    return '' +
+      '<div class="sunnah-card' + (u.isToday ? ' is-today' : '') + '" data-today-label="' + todayLabel + '">' +
+        '<div class="sc-badge"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 1l2 5 5-2-2 5 5 2-5 2 2 5-5-2-2 5-2-5-5 2 2-5-5-2 5-2-2-5 5 2z"/></svg><span class="sc-num">' + u.hp.day + '</span></div>' +
+        '<p class="sc-hijri">' + hijriString(u.hp, lang) + '</p>' +
+        '<p class="sc-greg">' + gregString(u.date, lang) + '</p>' +
+        '<span class="sc-dow' + (blessed ? ' blessed' : '') + '">' + dow + (blessed ? ' · ' + (lang === "ur" ? "بابرکت" : "recommended") : '') + '</span>' +
+      '</div>';
+  }).join("");
+}
+
 /* ---- Language toggle (EN / اردو) with localStorage persistence ---- */
 let currentLang = "en";
 
@@ -63,6 +188,8 @@ function setLang(lang) {
   try { localStorage.setItem("shaheen_lang", lang); } catch (e) {}
   // Re-apply the WhatsApp default text in the chosen language.
   applyContactLinks();
+  // Re-render the Hijri / Sunnah-days UI in the chosen language.
+  renderSunnah();
 }
 
 /* Load the Urdu Nastaliq font only when Urdu is first requested (perf). */
