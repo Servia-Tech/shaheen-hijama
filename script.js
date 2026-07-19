@@ -12,8 +12,8 @@
    Format for CLINIC_WHATSAPP: international, digits only, no "+" or spaces.
    Pakistan example: 92 (country) + 3XXXXXXXXX  ->  "923001234567"
    ------------------------------------------------------------------------- */
-const CLINIC_WHATSAPP       = "923332259835";                 // from the clinic's own Google listing — owner: confirm this is your WhatsApp number
-const CLINIC_PHONE_DISPLAY  = "+92 333 2259835 · +92 322 2905560 · +92 311 3023173";              // from the clinic's own Google listing
+const CLINIC_WHATSAPP       = "923222905560";                 // from the clinic's own Google listing — owner: confirm this is your WhatsApp number
+const CLINIC_PHONE_DISPLAY  = "+92 322 2905560";              // from the clinic's own Google listing
 /* ------------------------------------------------------------------------- */
 
 const DEFAULT_WA_TEXT = {

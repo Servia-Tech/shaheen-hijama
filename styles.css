@@ -636,3 +636,21 @@ body[dir="rtl"] .blog-card .bc-tag { letter-spacing: normal; }
 [dir="rtl"] .pkg-list li { padding-left:0; padding-right:24px; }
 [dir="rtl"] .pkg-list li::before { left:auto; right:0; }
 [dir="rtl"] .pkg-list li svg { left:auto; right:2px; }
+
+
+/* ---- Prominent location maps (added) ---- */
+.map-wrap.map-big { min-height: 440px; margin-bottom: 30px; }
+.map-wrap.map-big iframe { min-height: 440px; }
+.location-grid--single { grid-template-columns: 1fr; }
+.map-wrap.map-contact { min-height: 360px; }
+.map-wrap.map-contact iframe { min-height: 360px; }
+.footer-map-wrap { margin: 34px auto 6px; max-width: 720px; text-align: center; }
+.footer-map-wrap .map-wrap.map-foot { min-height: 240px; border-color: rgba(255,255,255,.15); }
+.footer-map-wrap .map-wrap.map-foot iframe { min-height: 240px; }
+.btn-sm { padding: .6em 1.1em; font-size: .92rem; }
+.footer-map-wrap .btn-outline { color: #fff; border-color: rgba(255,255,255,.55); }
+.footer-map-wrap .btn-outline:hover { background: #fff; color: var(--green-900); }
+@media (max-width: 560px) {
+  .map-wrap.map-big, .map-wrap.map-big iframe { min-height: 320px; }
+  .map-wrap.map-contact, .map-wrap.map-contact iframe { min-height: 300px; }
+}
