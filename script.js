@@ -33,7 +33,9 @@ function telLink() {
 /* ---- Wire up all contact links from the constants ---- */
 function applyContactLinks() {
   document.querySelectorAll("[data-wa]").forEach(function (a) {
-    a.setAttribute("href", waLink());
+    // Per-element prefilled message (e.g. package "Order" buttons): data-wa-msg-en / data-wa-msg-ur.
+    var custom = a.getAttribute("data-wa-msg-" + currentLang) || a.getAttribute("data-wa-msg");
+    a.setAttribute("href", waLink(custom));
   });
   document.querySelectorAll("[data-tel]").forEach(function (a) {
     a.setAttribute("href", telLink());
@@ -263,6 +265,37 @@ function initReveal() {
 }
 
 /* ---- Init ---- */
+/* ---- Sunnah-dates alert popup (shows the next Sunnah Hijama day, once per session) ---- */
+function initDatesPopup() {
+  const overlay = document.getElementById("datesPop");
+  if (!overlay) return;
+  let seen = false;
+  try { seen = sessionStorage.getItem("sh_dates_pop") === "1"; } catch (e) {}
+  if (seen) return;
+
+  let data = null;
+  try { data = computeSunnahData(); } catch (e) { return; }
+  if (!data || !data.upcoming || !data.upcoming.length) return;
+  const next = data.upcoming[0];
+
+  const hijriEl = overlay.querySelector(".dp-hijri");
+  const gregEl  = overlay.querySelector(".dp-greg");
+  if (hijriEl) hijriEl.textContent = hijriString(next.hp, currentLang);
+  if (gregEl)  gregEl.textContent  = (next.isToday ? "" : "") + gregString(next.date, currentLang);
+
+  function close() {
+    overlay.classList.remove("show");
+    try { sessionStorage.setItem("sh_dates_pop", "1"); } catch (e) {}
+  }
+  overlay.addEventListener("click", function (e) { if (e.target === overlay) close(); });
+  const x = overlay.querySelector(".dates-pop__close");
+  if (x) x.addEventListener("click", close);
+  overlay.querySelectorAll("[data-wa]").forEach(function (a) { a.addEventListener("click", close); });
+
+  // Show after a short delay so the page settles first.
+  setTimeout(function () { overlay.classList.add("show"); }, 1400);
+}
+
 document.addEventListener("DOMContentLoaded", function () {
   // Restore saved language, else default English (offer Urdu via toggle).
   let saved = "en";
@@ -284,6 +317,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
   applyContactLinks();
   initReveal();
+  initDatesPopup();
 
   // Set current year in footer.
   const y = document.getElementById("year");
