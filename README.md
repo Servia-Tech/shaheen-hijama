@@ -1,6 +1,6 @@
 # Shaheen Shafi Unani Clinic & Hijama Center — website
 
-Static, GitHub-Pages-ready site for the clinic in Nishterabad, Karachi.
+Static, GitHub-Pages-ready site for the clinic in Model Colony, Karachi.
 Plain HTML/CSS/JS — no build step, no framework, no dependencies to install.
 
 ## Files
@@ -48,7 +48,7 @@ Recommended: keep pointing patients to the Google Business Profile link already 
 
 - Practitioner name: `Hakeem [Name to be confirmed]` in the `#about` section.
 - Opening hours: "to be confirmed" in the `#location` section and in the JSON-LD `openingHoursSpecification`.
-- Approximate geo coordinates (24.8846, 67.0300 for Nishterabad) in the JSON-LD and `geo.position` meta — refine to the exact clinic point if desired.
+- Approximate geo coordinates (24.9072588, 67.1925137 for Model Colony) in the JSON-LD and `geo.position` meta — refine to the exact clinic point if desired.
 
 ## Preview locally
 
