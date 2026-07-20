@@ -1,0 +1,14 @@
+/* TEAM */
+  Clinic: Shaheen Shafi Unani Clinic & Hijama Center
+  Physician: Dr Misbah Shaheen Cheena
+  Location: Model Colony, Karachi, Pakistan
+  Contact: +92 322 2905560
+  Site: https://karachihijama.com
+
+/* SITE */
+  Standards: HTML5, CSS3, JSON-LD structured data
+  Components: Static site (GitHub Pages)
+  Language: English / Urdu
+  Doctor: Dr Misbah Shaheen Cheena
+  Services: Hijama (Cupping Therapy), Unani Medicine, Alternative Medicine
+  Last updated: 2026-07-20
