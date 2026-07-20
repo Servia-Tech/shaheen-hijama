@@ -30,7 +30,7 @@ different phone format) dilute the signal. Copy-paste from the block below — d
 | **Google Maps** | https://maps.app.goo.gl/VTyGuWixhJyLerCS6 |
 | **Hours** | Mon–Sat (confirm exact times before publishing; keep identical across all listings) |
 
-> ⚠️ **NEVER** write the old/incorrect locality "Nishterabad". The clinic is in **Model Colony, Karachi**.
+> ⚠️ **NEVER** write the old/incorrect locality "Model Colony". The clinic is in **Model Colony, Karachi**.
 
 **Short business description (paste into "About" fields, ~50 words):**
 > Shaheen Shafi Unani Clinic & Hijama Center in Model Colony, Karachi offers authentic Hijama
@@ -185,4 +185,4 @@ Do Facebook + Instagram early so their URLs can be added as `sameAs` in the home
 - Post **weekly** on GBP + Facebook + Instagram (before/after care, FAQs, hours during Ramadan/holidays).
 - Add real **photos** to GBP, Facebook, and every directory that allows images.
 - Build a couple of **local backlinks** (Karachi wellness blogs, the blog articles the content agent is writing).
-- Re-verify listings quarterly; delete any duplicate/old "Nishterabad" listings if they surface.
+- Re-verify listings quarterly; delete any duplicate/old "Model Colony" listings if they surface.
