@@ -93,6 +93,10 @@
   }
   .related-links a:hover { border-color: var(--amber-500); }
   .related-links span[data-lang] { display: block; font-weight: 400; font-size: .9rem; color: var(--ink-soft); margin-top: 3px; }
+.faq-block { margin-top: 40px; }
+.faq-item { border-top: 1px solid rgba(14,77,60,.14); padding: 18px 0; }
+.faq-item h3 { margin: 0 0 .5em; }
+.faq-item p { margin: 0; color: #33403a; }
 </style>
 
 <!-- ===================== JSON-LD: Article ===================== -->
@@ -143,6 +147,14 @@
   "@context": "https://schema.org",
   "@type": "FAQPage",
   "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Is Hijama halal or haram in Islam?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Hijama is halal, not haram. It is an established Sunnah practice — the Prophet Muhammad (peace be upon him) was cupped himself and said cupping is among the best remedies people treat themselves with (Sahih al-Bukhari 5696). Because it is a recommended Sunnah supported by authentic hadith, the majority of scholars agree that hijama, performed safely and hygienically, is fully permissible in Islam."
+      }
+    },
     {
       "@type": "Question",
       "name": "Is Hijama a Sunnah?",
@@ -448,6 +460,42 @@
       </li>
     </ul>
   </section>
+
+
+      <!-- ============================ FAQ ============================ -->
+      <div class="faq-block">
+        <h2><span data-lang="en">Frequently asked questions</span><span data-lang="ur">اکثر پوچھے جانے والے سوالات</span></h2>
+
+        <div class="faq-item">
+          <h3><span data-lang="en">Is Hijama a Sunnah?</span><span data-lang="ur">کیا حجامہ سنت ہے؟</span></h3>
+          <p><span data-lang="en">Yes. Cupping (hijama) is established in the authentic Sunnah. The Prophet Muhammad (peace be upon him) was treated with cupping and encouraged it. Sahih al-Bukhari records that he said the best remedies people treat themselves with include cupping (Sahih al-Bukhari 5696). Because he did it and recommended it, hijama is considered a Sunnah.</span><span data-lang="ur">جی ہاں۔ حجامہ (کپنگ) صحیح سنت میں ثابت ہے۔ نبی کریم ﷺ نے حجامہ کروایا اور اس کی ترغیب دی۔ صحیح بخاری میں ہے کہ آپ ﷺ نے فرمایا کہ لوگ اپنا علاج جن چیزوں سے کرتے ہیں ان میں بہترین حجامہ ہے (صحیح بخاری 5696)۔ چونکہ آپ ﷺ نے یہ کیا اور اس کی ترغیب دی، اس لیے حجامہ سنت شمار ہوتا ہے۔</span></p>
+        </div>
+
+        <div class="faq-item">
+          <h3><span data-lang="en">Is Hijama halal or haram in Islam?</span><span data-lang="ur">اسلام میں حجامہ حلال ہے یا حرام؟</span></h3>
+          <p><span data-lang="en">Hijama is halal, not haram. It is an established Sunnah practice — the Prophet Muhammad (peace be upon him) was cupped himself and said cupping is among the best remedies people treat themselves with (Sahih al-Bukhari 5696). Because it is a recommended Sunnah supported by authentic hadith, the majority of scholars agree that hijama, performed safely and hygienically, is fully permissible in Islam.</span><span data-lang="ur">حجامہ حلال ہے، حرام نہیں۔ یہ ایک ثابت شدہ سنت عمل ہے — خود نبی کریم ﷺ نے حجامہ کروایا اور فرمایا کہ حجامہ بہترین علاج میں سے ہے (صحیح بخاری 5696)۔ چونکہ یہ صحیح احادیث سے ثابت ایک مسنون عمل ہے، اکثر علماء کا اتفاق ہے کہ حجامہ، محفوظ اور صاف ستھرے انداز میں کیا جائے تو مکمل طور پر جائز ہے۔</span></p>
+        </div>
+
+        <div class="faq-item">
+          <h3><span data-lang="en">Which days are recommended for Hijama in the Sunnah?</span><span data-lang="ur">سنت میں حجامہ کے لیے کون سے دن تجویز کیے گئے ہیں؟</span></h3>
+          <p><span data-lang="en">A narration in Sunan Abu Dawud (3861) and Sunan Ibn Majah (3486) mentions the 17th, 19th and 21st of the lunar (Hijri) month as beneficial days for cupping. These are recommended, not obligatory. Scholars have understood such narrations as guidance rather than a strict command, and the therapy may be done on other days when needed.</span><span data-lang="ur">سنن ابو داؤد (3861) اور سنن ابن ماجہ (3486) کی روایت میں قمری (ہجری) مہینے کی 17، 19 اور 21 تاریخ کو حجامہ کے لیے مفید دن بتایا گیا ہے۔ یہ تجویز کردہ ہیں، لازمی نہیں۔ علماء نے ایسی روایات کو رہنمائی سمجھا ہے نہ کہ سخت حکم، اور ضرورت پڑنے پر یہ علاج دیگر دنوں میں بھی کیا جا سکتا ہے۔</span></p>
+        </div>
+
+        <div class="faq-item">
+          <h3><span data-lang="en">Can you do Hijama while fasting?</span><span data-lang="ur">کیا روزے کی حالت میں حجامہ کروایا جا سکتا ہے؟</span></h3>
+          <p><span data-lang="en">There is a difference of opinion among scholars. Sahih al-Bukhari (1938) reports that the Prophet (peace be upon him) was cupped while he was fasting. Some scholars therefore permit it; others, citing another narration, prefer to have it done outside the fast. Following the guidance of a trusted scholar, you can choose what suits you — many simply book their session after iftar or on a non-fasting day, and we are happy to arrange a convenient time.</span><span data-lang="ur">علماء کے درمیان اس پر اختلاف رائے ہے۔ صحیح بخاری (1938) میں ہے کہ نبی کریم ﷺ روزے کی حالت میں حجامہ کروایا۔ کچھ علماء اسے جائز سمجھتے ہیں؛ دیگر، ایک اور روایت کے حوالے سے، روزے کے علاوہ کروانے کو ترجیح دیتے ہیں۔ اپنے قابلِ اعتماد عالم کی رہنمائی پر عمل کرتے ہوئے آپ اپنے لیے موزوں طریقہ چن سکتے ہیں — بہت سے لوگ افطار کے بعد یا غیر روزے کے دن سیشن بک کرتے ہیں، ہم آپ کے لیے موزوں وقت طے کرنے میں خوشی محسوس کریں گے۔</span></p>
+        </div>
+
+        <div class="faq-item">
+          <h3><span data-lang="en">Is Hijama a source of healing (shifa) in Islam?</span><span data-lang="ur">کیا حجامہ اسلام میں شفا کا ذریعہ ہے؟</span></h3>
+          <p><span data-lang="en">In the Islamic tradition, yes. Hijama is regarded as one of the means of healing recommended by the Prophet (peace be upon him), alongside honey and other traditional remedies. As with any medical treatment, healing ultimately comes from Allah, and hijama is used as a permissible, natural means He has made available to us.</span><span data-lang="ur">اسلامی روایت میں، جی ہاں۔ حجامہ کو ان ذرائع میں شمار کیا جاتا ہے جن کی نبی کریم ﷺ نے ترغیب دی، شہد اور دیگر روایتی علاج کے ساتھ ساتھ۔ جیسے کسی بھی طبی علاج میں، شفا بالآخر اللہ کی طرف سے ہے، اور حجامہ ایک جائز، قدرتی ذریعہ ہے جو اس نے ہمارے لیے مہیا کیا ہے۔</span></p>
+        </div>
+
+        <div class="faq-item">
+          <h3><span data-lang="en">What intention (niyyah) should I have for Hijama?</span><span data-lang="ur">حجامہ کے لیے کیا نیت رکھنی چاہیے؟</span></h3>
+          <p><span data-lang="en">A simple, sincere intention is enough — seeking a permissible means of health and wellbeing, following a practice the Prophet (peace be upon him) himself did, and trusting that healing is from Allah. You do not need any special ritual beyond a clean, calm mindset and, if you wish, a short prayer for wellbeing before your session.</span><span data-lang="ur">ایک سادہ، مخلصانہ نیت کافی ہے — صحت و تندرستی کا جائز ذریعہ اختیار کرنا، نبی کریم ﷺ کے عمل کی پیروی کرنا، اور یہ یقین رکھنا کہ شفا اللہ کی طرف سے ہے۔ آپ کو کسی خاص رسم کی ضرورت نہیں سوائے صاف، پُرسکون ذہن کے اور اگر چاہیں تو سیشن سے پہلے صحت کے لیے مختصر دعا کے۔</span></p>
+        </div>
+      </div>
 
 </article>
 </main>

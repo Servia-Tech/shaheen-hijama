@@ -101,6 +101,10 @@
   .related-links a:hover { border-color: var(--amber-500); }
   .related-links span[data-lang] { display: block; font-weight: 400; font-size: .9rem; color: var(--ink-soft); margin-top: 3px; }
   .article .disclaimer { margin: 34px 0 0; }
+.faq-block { margin-top: 40px; }
+.faq-item { border-top: 1px solid rgba(14,77,60,.14); padding: 18px 0; }
+.faq-item h3 { margin: 0 0 .5em; }
+.faq-item p { margin: 0; color: #33403a; }
 </style>
 
 <!-- ===================== JSON-LD: Article ===================== -->
@@ -151,6 +155,14 @@
   "@context": "https://schema.org",
   "@type": "FAQPage",
   "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "How much blood is removed during a Hijama session?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "In wet cupping, only a small, controlled amount of blood is drawn from tiny superficial skin scratches into each cup — typically a few millilitres per cup, far less than a standard blood donation. It is not enough to cause weakness in a healthy adult. The exact amount depends on the number of cups and areas treated, and we monitor it carefully throughout your session."
+      }
+    },
     {
       "@type": "Question",
       "name": "What are the normal side effects of Hijama?",
@@ -416,6 +428,42 @@
       </li>
     </ul>
   </section>
+
+
+      <!-- ============================ FAQ ============================ -->
+      <div class="faq-block">
+        <h2><span data-lang="en">Frequently asked questions</span><span data-lang="ur">اکثر پوچھے جانے والے سوالات</span></h2>
+
+        <div class="faq-item">
+          <h3><span data-lang="en">What are the normal side effects of Hijama?</span><span data-lang="ur">حجامہ کے عام مضر اثرات کیا ہیں؟</span></h3>
+          <p><span data-lang="en">The most common and expected effect is a set of small, round marks where the cups sat, which usually fade within several days to two weeks — this is a normal, harmless part of the process, not a bruise from injury. Some people feel mildly tired or a little light-headed for a short while afterwards, which usually passes quickly with rest and water.</span><span data-lang="ur">سب سے عام اور متوقع اثر کپوں کی جگہ چھوٹے، گول نشان ہیں، جو عموماً چند دن سے دو ہفتوں میں ختم ہو جاتے ہیں — یہ عمل کا معمول کا، بے ضرر حصہ ہے، کسی چوٹ کا نیل نہیں۔ کچھ لوگ بعد میں تھوڑی دیر کے لیے ہلکی تھکن یا چکر محسوس کرتے ہیں، جو عموماً آرام اور پانی سے جلد ختم ہو جاتا ہے۔</span></p>
+        </div>
+
+        <div class="faq-item">
+          <h3><span data-lang="en">How much blood is removed during a Hijama session?</span><span data-lang="ur">حجامہ سیشن میں کتنا خون نکالا جاتا ہے؟</span></h3>
+          <p><span data-lang="en">In wet cupping, only a small, controlled amount of blood is drawn from tiny superficial skin scratches into each cup — typically a few millilitres per cup, far less than a standard blood donation. It is not enough to cause weakness in a healthy adult. The exact amount depends on the number of cups and areas treated, and we monitor it carefully throughout your session.</span><span data-lang="ur">گیلے حجامہ میں، جلد پر باریک سطحی خراشوں سے ہر کپ میں تھوڑی، محتاط مقدار میں خون کھینچا جاتا ہے — عموماً فی کپ چند ملی لیٹر، جو عام خون کے عطیہ سے کہیں کم ہے۔ یہ ایک صحت مند بالغ میں کمزوری پیدا کرنے کے لیے کافی نہیں۔ صحیح مقدار کپوں کی تعداد اور علاج کیے جانے والے حصوں پر منحصر ہے، اور ہم آپ کے سیشن کے دوران احتیاط سے نگرانی کرتے ہیں۔</span></p>
+        </div>
+
+        <div class="faq-item">
+          <h3><span data-lang="en">Who should avoid or postpone Hijama?</span><span data-lang="ur">حجامہ سے کن کو پرہیز یا التوا کرنا چاہیے؟</span></h3>
+          <p><span data-lang="en">We generally ask people to avoid or postpone Hijama if they are pregnant, have a bleeding disorder or are on blood-thinning medication, have severe anaemia, have an active skin infection or open wound at the treatment site, are extremely weak or unwell, or have certain serious conditions their doctor has advised caution about. If any of this applies to you, please tell us honestly when you book — we would rather advise you safely than treat you when it isn't right.</span><span data-lang="ur">ہم عموماً لوگوں کو حجامہ سے پرہیز یا التوا کا کہتے ہیں اگر وہ حاملہ ہوں، خون بہنے کا عارضہ ہو یا خون پتلا کرنے والی دوا لے رہے ہوں، شدید خون کی کمی ہو، جگہ پر فعال جلدی انفیکشن یا کھلا زخم ہو، انتہائی کمزور یا بیمار ہوں، یا کسی سنگین بیماری میں ڈاکٹر نے احتیاط کا کہا ہو۔ اگر آپ پر یہ لاگو ہوتا ہے تو بکنگ کے وقت ایمانداری سے بتائیں — ہم آپ کو محفوظ رہنمائی دینا پسند کریں گے بجائے اس کے کہ نامناسب وقت پر علاج کریں۔</span></p>
+        </div>
+
+        <div class="faq-item">
+          <h3><span data-lang="en">Can Hijama cause an infection?</span><span data-lang="ur">کیا حجامہ سے انفیکشن ہو سکتا ہے؟</span></h3>
+          <p><span data-lang="en">The risk is very low when proper hygiene is followed, which is why we use single-use sterile cups and blades for every single patient, and a clean, controlled environment. Following our simple aftercare advice — keeping the area clean and dry for the first day — further reduces any risk.</span><span data-lang="ur">مناسب صفائی کے ساتھ خطرہ بہت کم ہے، اسی لیے ہم ہر مریض کے لیے سنگل یوز جراثیم سے پاک کپ اور بلیڈ اور صاف، کنٹرول شدہ ماحول استعمال کرتے ہیں۔ ہماری آسان بعد کی دیکھ بھال کی ہدایات — پہلے دن جگہ کو صاف اور خشک رکھنا — خطرے کو مزید کم کرتی ہیں۔</span></p>
+        </div>
+
+        <div class="faq-item">
+          <h3><span data-lang="en">Are the cupping marks painful or dangerous?</span><span data-lang="ur">کیا کپنگ کے نشان تکلیف دہ یا خطرناک ہیں؟</span></h3>
+          <p><span data-lang="en">No. The circular marks are a normal, expected part of wet cupping and are not painful once the session ends — most people describe mild tenderness at most, similar to a light pinch. They fade naturally over several days to two weeks and leave no lasting damage.</span><span data-lang="ur">نہیں۔ گول نشان گیلے حجامہ کا معمول کا، متوقع حصہ ہیں اور سیشن ختم ہونے کے بعد تکلیف دہ نہیں ہوتے — زیادہ تر لوگ زیادہ سے زیادہ ہلکی نرمی محسوس کرتے ہیں، ہلکی چٹکی جیسی۔ یہ چند دن سے دو ہفتوں میں خود بخود ختم ہو جاتے ہیں اور کوئی مستقل نقصان نہیں چھوڑتے۔</span></p>
+        </div>
+
+        <div class="faq-item">
+          <h3><span data-lang="en">How do I get a safe Hijama assessment in Karachi?</span><span data-lang="ur">کراچی میں محفوظ حجامہ کا جائزہ کیسے لوں؟</span></h3>
+          <p><span data-lang="en">Message us on WhatsApp at +92 322 2905560 and tell us honestly about your health, any medication you take, and any conditions you have. We will assess whether Hijama is suitable for you and, if so, arrange a comfortable, safe session at our Model Colony clinic in Karachi.</span><span data-lang="ur">واٹس ایپ +92 322 2905560 پر پیغام بھیجیں اور ہمیں اپنی صحت، کوئی بھی دوا، اور کوئی بیماری کے بارے میں ایمانداری سے بتائیں۔ ہم جائزہ لیں گے کہ حجامہ آپ کے لیے موزوں ہے یا نہیں، اور اگر ہو تو کراچی کے ماڈل کالونی کلینک میں آرام دہ، محفوظ سیشن کا انتظام کریں گے۔</span></p>
+        </div>
+      </div>
 
 </article>
 </main>
